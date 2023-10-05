@@ -19,10 +19,17 @@ class ProdukDetail : AppCompatActivity() {
         val ibShare: ImageButton = findViewById(R.id.ibShare)
 
         ibSave.setOnClickListener {
-            ibShare.setImageResource(R.drawable.ic_saved)
+            ibSave.setImageResource(R.drawable.ic_saved)
             Toast.makeText(
                 this, "Saved", Toast.LENGTH_SHORT
             ).show()
+        }
+
+        ibShare.setOnClickListener{
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.putExtra(Intent.EXTRA_TEXT, "OMG Macbook Pro-Chan \uD83D\uDE0B")
+            intent.setType("text/plain")
+            startActivity(Intent.createChooser(intent, "Share to an idiot: "))
         }
 
         val BuyNow: Button = findViewById(R.id.BuyNow)
