@@ -29,7 +29,7 @@ class DashboardMenuActivity : AppCompatActivity() {
                 cvNotif.visibility = View.VISIBLE
             }
             else {
-                cvNotif.visibility == View.GONE
+                cvNotif.visibility = View.GONE
             }
         }
 
