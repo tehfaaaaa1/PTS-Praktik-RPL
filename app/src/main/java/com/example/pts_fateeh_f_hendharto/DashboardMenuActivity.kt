@@ -1,9 +1,12 @@
 package com.example.pts_fateeh_f_hendharto
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
+import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,14 +16,14 @@ import com.example.pts_fateeh_f_hendharto.databinding.ItemListItemBinding
 import com.example.pts_fateeh_f_hendharto.model.DataItem
 
 class DashboardMenuActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityDashboardMenuBinding
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_dashboard_menu)
+        setContentView(R.layout.activity_dashboard_menu)
 
 //      Tampilkan notif ketika pencet notif
-        val notif = binding.notif
-        val cvNotif = binding.cvNotif
+        val notif:ImageButton = findViewById(R.id.notif)
+        val cvNotif:CardView = findViewById(R.id.cvNotif)
         notif.setOnClickListener {
             if (cvNotif.visibility == View.GONE) {
                 cvNotif.visibility = View.VISIBLE
@@ -29,23 +32,20 @@ class DashboardMenuActivity : AppCompatActivity() {
                 cvNotif.visibility == View.GONE
             }
         }
-//        DATA BINDING UNTUK RECYCLER VIEW
-//        ENTAH MENGAPA SAYA MELAKUKAN INI
-        val listItem = arrayListOf<DataItem>(
+
+//      RPL SERU BANGET
+        val listItem = listOf(
             DataItem("Macbook Pro 13 M2 Chip", R.drawable.pic1, "15", "4.6"),
             DataItem("PS5 Pro Max Ultimate", R.drawable.pic2, "10", "4.2"),
             DataItem("iPhone Huhuy", R.drawable.pic3, "99", "4.1")
         )
-
+        val ivItemImage: ImageButton = findViewById(R.id.ivItemImage)
         val adapter = DataItemAdapter(listItem)
-        val recyclerView = binding.rvPopularProduct
+        val recyclerView: RecyclerView = findViewById(R.id.rvPopularProduct)
 
-        recyclerView.apply {
-            this.adapter = adapter
-            this.layoutManager = LinearLayoutManager(
-                this@DashboardMenuActivity, LinearLayoutManager.HORIZONTAL, false)
-        }
-
-
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(
+            this, LinearLayoutManager.HORIZONTAL, false
+        )
     }
 }

@@ -12,11 +12,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <ImageView
+        <ImageButton
             android:id="@+id/ivItemImage"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:src="@drawable/pic1"
+            android:scaleType="fitCenter"
             android:layout_centerHorizontal="true"
             android:background="@drawable/grey_background"/>
             <androidx.cardview.widget.CardView
