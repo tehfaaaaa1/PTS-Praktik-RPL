@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pts_fateeh_f_hendharto.ProdukDetail
 import com.example.pts_fateeh_f_hendharto.R
 import com.example.pts_fateeh_f_hendharto.model.DataItem
+import org.w3c.dom.Text
 
 class DataItemAdapter (private val data:List<DataItem>)
     : RecyclerView.Adapter<DataItemAdapter.DataItemViewHolder>() {
@@ -19,6 +20,7 @@ class DataItemAdapter (private val data:List<DataItem>)
         val ivItemImage: ImageView = view.findViewById(R.id.ivItemImage)
         val tvItemRating: TextView = view.findViewById(R.id.tvItemRating)
         val tvItemComment: TextView = view.findViewById(R.id.tvItemComment)
+        val tvPrice: TextView = view.findViewById(R.id.tvPrice)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataItemViewHolder {
@@ -35,6 +37,7 @@ class DataItemAdapter (private val data:List<DataItem>)
         holder.ivItemImage.setImageResource(item.image)
         holder.tvItemComment.text = item.comment
         holder.tvItemRating.text = item.rating
+        holder.tvPrice.text = item.price
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, ProdukDetail::class.java)
             holder.itemView.context.startActivity(intent)

@@ -4,5 +4,6 @@ data class DataItem (
     val name: String,
     val image: Int,
     val comment: String,
-    val rating: String
+    val rating: String,
+    val price : String
 )

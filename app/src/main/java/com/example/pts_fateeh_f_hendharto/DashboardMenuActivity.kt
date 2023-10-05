@@ -35,11 +35,10 @@ class DashboardMenuActivity : AppCompatActivity() {
 
 //      RPL SERU BANGET
         val listItem = listOf(
-            DataItem("Macbook Pro 13 M2 Chip", R.drawable.pic1, "15", "4.6"),
-            DataItem("PS5 Pro Max Ultimate", R.drawable.pic2, "10", "4.2"),
-            DataItem("iPhone Huhuy", R.drawable.pic3, "99", "4.1")
+            DataItem("Macbook Pro 13 M2 Chip", R.drawable.pic1, "15", "4.6", "USD 1346,87"),
+            DataItem("PS5 Pro Max Ultimate", R.drawable.pic2, "10", "4.2", "USD 399,99"),
+            DataItem("iPhone Huhuy", R.drawable.pic3, "99", "4.1", "USD 1")
         )
-        val ivItemImage: ImageButton = findViewById(R.id.ivItemImage)
         val adapter = DataItemAdapter(listItem)
         val recyclerView: RecyclerView = findViewById(R.id.rvPopularProduct)
 
