@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_color_background"
+    tools:context=".LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="30dp"
+                android:text="Log in"
+                android:textColor="@color/white"
+                android:textSize="48sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/incorrectPass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username or password is incorrect.\nPlease try again."
+                android:textColor="@color/red"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:layout_marginTop="80dp"
+                android:layout_gravity="center"
+                android:visibility="invisible"/>
+
+            <EditText
+                android:id="@+id/cinUsername"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_background"
+                android:hint="Username"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/cinPass"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_background"
+                android:hint="Password"
+                android:paddingStart="50dp"
+                android:paddingEnd="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:layout_marginTop="30dp"
+                android:textAlignment="center"
+                android:inputType="textPassword"
+                android:drawableEnd="@drawable/ic_baseline_remove_red_eye_24"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forgot your password?"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSignIn"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/btn_background"
+                android:text="Sign in"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don't have an account?"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register now"
+                android:textColor="@color/orange"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
